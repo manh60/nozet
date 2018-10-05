@@ -1,0 +1,2 @@
+module VnHelper
+end

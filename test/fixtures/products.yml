@@ -1,0 +1,55 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  IDSP: 1
+  TENSP: MyText
+  NGAYPHATHANH: 2018-10-05
+  ANH: MyText
+  ANHHOVER: MyText
+  ANHCHITIET: MyText
+  GENDER: MyText
+  AGE: MyText
+  GIABAN: 1
+  GIAGOC: 1
+  SALE: MyText
+  COLOR: MyText
+  COLORDT: MyText
+  FRANCHISE: MyText
+  PRODUCTTYPE: MyText
+  BRAND: MyText
+  CATEGORY: MyText
+  SPORTS: MyText
+  MIADIDAS: MyText
+  TEAMNAME: MyText
+  PARNER: MyText
+  DESCRIPTION_H5: MyText
+  DESCRIPTION_P: MyText
+  SPECIFICATIONS: MyText
+  CARE: MyText
+
+two:
+  IDSP: 1
+  TENSP: MyText
+  NGAYPHATHANH: 2018-10-05
+  ANH: MyText
+  ANHHOVER: MyText
+  ANHCHITIET: MyText
+  GENDER: MyText
+  AGE: MyText
+  GIABAN: 1
+  GIAGOC: 1
+  SALE: MyText
+  COLOR: MyText
+  COLORDT: MyText
+  FRANCHISE: MyText
+  PRODUCTTYPE: MyText
+  BRAND: MyText
+  CATEGORY: MyText
+  SPORTS: MyText
+  MIADIDAS: MyText
+  TEAMNAME: MyText
+  PARNER: MyText
+  DESCRIPTION_H5: MyText
+  DESCRIPTION_P: MyText
+  SPECIFICATIONS: MyText
+  CARE: MyText

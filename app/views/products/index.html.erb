@@ -1,0 +1,70 @@
+<h1>Liệt kê các bài viết</h1>
+
+<%= link_to 'Bài viết mới', new_product_path %>
+<table>
+  <tr>
+    <th>IDSP</th>
+    <th>TENSP</th>
+    <th>NGAYPHATHANH</th>
+    <th>ANH</th>
+    <th>ANHHOVER</th>
+    <th>ANHCHITIET</th>
+    <th>GENDER</th>
+    <th>AGE</th>
+    <th>GIABAN</th>
+    <th>GIAGOC</th>
+    <th>SALE</th>
+    <th>COLOR</th>
+    <th>COLORDT</th>
+    <th>FRANCHISE</th>
+    <th>PRODUCTTYPE</th>
+    <th>BRAND</th>
+    <th>CATEGORY</th>
+    <th>SPORTS</th>
+    <th>MIADIDAS</th>
+    <th>TEAMNAME</th>
+    <th>PARNER</th>
+    <th>DESCRIPTION_H5</th>
+    <th>DESCRIPTION_P</th>
+    <th>SPECIFICATIONS</th>
+    <th>CARE</th>
+    <th></th>
+  </tr>
+
+  <% @products.each do |product| %>
+  <tr>
+    <td><%= product.IDSP %></td>
+    <td><%= product.TENSP %></td>
+    <td><%= product.NGAYPHATHANH %></td>
+    <td><%= product.ANH %></td>
+    <td><%= product.ANHHOVER %></td>
+    <td><%= product.ANHCHITIET %></td>
+    <td><%= product.GENDER %></td>
+    <td><%= product.AGE %></td>
+    <td><%= product.GIABAN %></td>
+    <td><%= product.GIAGOC %></td>
+    <td><%= product.SALE %></td>
+    <td><%= product.COLOR %></td>
+    <td><%= product.COLORDT %></td>
+    <td><%= product.FRANCHISE %></td>
+    <td><%= product.PRODUCTTYPE %></td>
+    <td><%= product.BRAND %></td>
+    <td><%= product.CATEGORY %></td>
+    <td><%= product.SPORTS %></td>
+    <td><%= product.MIADIDAS %></td>
+    <td><%= product.TEAMNAME %></td>
+    <td><%= product.PARNER %></td>
+    <td><%= product.DESCRIPTION_H5 %></td>
+    <td><%= product.DESCRIPTION_P %></td>
+    <td><%= product.SPECIFICATIONS %></td>
+    <td><%= product.CARE %></td>
+    <td><%= link_to 'Xem', product_path(product) %></td>
+    <td><%= link_to 'Sửa', edit_product_path(product) %></td>
+    <td><%= link_to 'Xóa', product_path(product),
+              method: :delete,
+              data: { confirm: 'Bạn có chắc không?' } %></td>
+  </tr>
+  <% end %>
+</table>
+<br>
+<%= link_to 'Trở lại', root_path %>

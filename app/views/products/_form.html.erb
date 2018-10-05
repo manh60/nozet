@@ -1,0 +1,42 @@
+<%= form_with model: @product, local: true do |form| %>
+
+<% if @product.errors.any? %>
+<div id="error_explanation">
+  <h2>
+    <%= pluralize(@product.errors.count, "error") %> prohibited
+    this product from being saved:
+  </h2>
+  <ul>
+    <% @product.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<%= form.label :IDSP %><%= form.text_field :IDSP %>
+<%= form.label :TENSP %><%= form.text_area :TENSP %>
+<%= form.label :NGAYPHATHANH %><%= form.text_area :NGAYPHATHANH %>
+<%= form.label :ANH %><%= form.text_area :ANH %>
+<%= form.label :ANHHOVER %><%= form.text_area :ANHHOVER %>
+<%= form.label :ANHCHITIET %><%= form.text_area :ANHCHITIET %>
+<%= form.label :GENDER %><%= form.text_area :GENDER %>
+<%= form.label :AGE %><%= form.text_area :AGE %>
+<%= form.label :GIABAN %><%= form.text_area :GIABAN %>
+<%= form.label :GIAGOC %><%= form.text_area :GIAGOC %>
+<%= form.label :SALE %><%= form.text_area :SALE %>
+<%= form.label :COLOR %><%= form.text_area :COLOR %>
+<%= form.label :COLORDT %><%= form.text_area :COLORDT %>
+<%= form.label :FRANCHISE %><%= form.text_area :FRANCHISE %>
+<%= form.label :PRODUCTTYPE %><%= form.text_area :PRODUCTTYPE %>
+<%= form.label :BRAND %><%= form.text_area :BRAND %>
+<%= form.label :CATEGORY %><%= form.text_area :CATEGORY %>
+<%= form.label :SPORTS %><%= form.text_area :SPORTS %>
+<%= form.label :MIADIDAS %><%= form.text_area :MIADIDAS %>
+<%= form.label :TEAMNAME %><%= form.text_area :TEAMNAME %>
+<%= form.label :PARNER %><%= form.text_area :PARNER %>
+<%= form.label :DESCRIPTION_H5 %><%= form.text_area :DESCRIPTION_P %>
+<%= form.label :SPECIFICATIONS %><%= form.text_area :SPECIFICATIONS %>
+<%= form.label :CARE %><%= form.text_area :CARE %>
+
+<% end %>
