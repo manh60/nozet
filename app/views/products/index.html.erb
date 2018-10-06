@@ -1,4 +1,6 @@
-<h1>Liệt kê các bài viết</h1>
+<% provide(:title, "adidas All") %>
+<!--
+<h1>Liệt kê tất cả sản phẩm</h1>
 
 <%= link_to 'Bài viết mới', new_product_path %>
 <table>
@@ -68,3 +70,141 @@
 </table>
 <br>
 <%= link_to 'Trở lại', root_path %>
+
+-->
+
+
+
+         
+
+
+
+
+
+  <div class="rbk-page-info-top-holder">
+      <div class="pageinfotop-wrapper ">
+            <div id="breadcrumbs">
+          <ul id="product-breadcrumb" class="breadcrumbs clearfix " data-component="product/ProductBreadCrumb" data-scope="breadcrumbs">
+        
+              <li class="back">
+            <a id="product-back" class="icon-arrow-left-circle" title="Trở lại"  onclick="goBack()">
+      &#10096;Trở lại
+      </a>
+        </li>
+
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+    <script>
+function goBack() {
+    window.history.back();
+}
+</script>
+        
+        
+            <li class="home" data-context="home">
+                <span class="divider">|</span>
+                <a href="/" itemprop="url" title="Trang chủ">Trang chủ</a>
+            </li>
+            
+        
+        
+
+        
+            
+            
+            
+                
+                    
+            
+
+
+<!--GENDER AGE FRANCHISE BRAND SPORTS PRODUCTTYPE PARNER CATEGORY MIADIDAS-->
+
+
+                    
+                
+            
+        
+    </ul>
+
+
+            </div>
+        
+<br>
+        <div class="page-heading clearfix">
+            <div class="rbk-page-heading">
+                <div class="rbk-heading-wrapper">
+                    
+        <h1>
+        thuộc tính sản phẩm
+        </h1>        
+                    <p class="count">           
+                            (# Sản Phẩm)      
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+
+<div style="width: 218px;float:left; padding:10px; margin:50px 10px 10px 80px;position: absolute;background:#eceef0;">
+<h3 style="border-bottom: 1px solid #c8cbcc;height: 3em;line-height: 1em;font-weight: bold;font-size: 16px;">LỰA CHỌN CỦA BẠN</h3>
+<br>
+<br>
+</div>
+
+<main>
+
+<div class="pagination">
+<div style="float:left; margin-left:0px">Sắp xếp theo: Tên sản phẩm [A-Z]</div>
+<div style="float:left; margin-left:140px">Xem: 48</div>
+  Trang: 
+        
+</div>
+
+        <!-- lặp lấy sản phẩm -->
+<% @products.each do |product| %>
+
+<div style="">
+<a href="/products/<%= product.id %>">   
+<div class="product">
+
+  <div class="gl-product-card">
+    <div class="gl-badge gl-badge--small gl-badge--urgent" style="">
+<%= product.NGAYPHATHANH %>
+</div>
+  </div>
+
+  <img src="/assets/images/<%= product.IDSP %>/<%= product.ANH %>" alt="memphis" onmouseover="this.src='/assets/images/<%= product.IDSP %>/<%= product.ANHHOVER %>'" onmouseout="this.src='/assets/images/<%= product.IDSP %>/<%= product.ANH %>'" title="adidas - <%= product.TENSP %>" >
+    <h3 style="border-bottom: 1px solid #c8cbcc;height: 3em;line-height: 1em;"><%= product.TENSP %></h3>
+
+    <%= product.GENDER %>
+    <br>
+    <h3>
+    <span id="red"
+        <?php if(!empty($giagoc)) echo "style=\"color: red\""?>>  
+        <%= product.GIABAN %> 
+        </span><strike><%= product.GIAGOC %></strike>
+    </span></h3>
+</div>      
+</a>    
+</div> 
+
+<% end %>
+
+<div class="pagination">
+<div style="float:left; margin-left:0px">Sắp xếp theo: Tên sản phẩm [A-Z]</div>
+<div style="float:left; margin-left:140px">Xem: 48</div>
+  Trang: 
+        
+</div>
+
+</main>
