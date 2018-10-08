@@ -1,0 +1,15 @@
+---
+:concurrency: 5
+staging:
+  :concurrency: 10
+production:
+  :concurrency: 20
+:queues:
+  - critical
+  - default
+  - low
+
+:schedule:
+  hello_world:
+    cron: '* * * * *'   # Runs once per minute
+    class: HelloJob
