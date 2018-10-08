@@ -262,16 +262,11 @@ ol, ul {
     height: 530px!important;
 }
 
-@media (min-height: 600px) and (min-width: 960px){
-.glass_image_viewer___3pD5T {
-    height: 530px;
-    
-}}
-@media (min-width: 960px){
-.glass_image_viewer___3pD5T {
 
-    width: 86.6666666%;
-}}
+.glass_image_viewer___3pD5T { 
+    background-color: #eceef0;   
+}
+
 
 @media (min-width: 960px){
 .images_container___3KxTB img {
@@ -439,9 +434,11 @@ ol, ul {
 @media (min-width: 960px){
 .thumbnails_container___3SJWq {
     position: absolute;
-    top: 160px;
-
-    overflow: hidden;
+    top: 230px;
+    left:15px;
+    width: 80px; 
+    max-height: 400px;
+    overflow-y: scroll;
     display: block;
 }}
 .thumbnails_container___3SJWq {
@@ -1230,8 +1227,8 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 960px){
 .img-zoom-result {
     position: absolute;
-    top: 38px;
-    right: 20px;
+    top: 158px;
+    right: 5px;
     width: 450px;
     height: 600px;
     overflow: hidden;

@@ -1,7 +1,9 @@
 
 <% provide(:title, "adidas "+@product.TENSP+" - "+@product.COLOR+"") %>
+<% giaban = @product.GIABAN %>
+<% giagoc = @product.GIAGOC %>
 
-
+<%= render 'layouts/uspbar' %>
 
 
 <div data-auto-id="glass-breadcrumbs" class="gl-hidden-s-m breadcrumb___2DviW">
@@ -30,11 +32,10 @@ function goBack() {
 
 <!------------------------------------------------------------------------------------------ -->     
 
-<div data-auto-id="glass-image-viewer" class="glass_image_viewer___3pD5T" style="background-color: #eceef0;
-    background-size: 50% 100%!important;">
+<div data-auto-id="glass-image-viewer" class="glass_image_viewer___3pD5T" style="">
 
 <script src="/js/zoom.js"></script>
-<div data-auto-id="images_container" class="images_container___3KxTB " onclick="zoom()" style="margin-left: -250px">
+<div data-auto-id="images_container" class="images_container___3KxTB " onclick="zoom()" style="margin-left: -210px">
 <img onclick="changecursor()" id="expandedImg" class="performance-item" alt="<%= @product.TENSP %> Black <%= @product.IDSP %>" src="/assets/images/<%= @product.IDSP %>/<%= @product.IDSP %>dt1.jpg">
 <div id="myresult" class="img-zoom-result" style="display:none">
 </div>
@@ -122,14 +123,16 @@ imageZoom("expandedImg", "myresult");
 -->
 </div>
 
-<div class="gl-badge gl-badge--large gl-badge--urgent" style="top: 30px;left: 40px; ">
-<%= @product.NGAYPHATHANH %>
+<div class="gl-badge gl-badge--large gl-badge--urgent" style="top: 140px;left: 40px; "> -
+    <% if giaban < giagoc %> 
+        <%= (100-giaban.fdiv(giagoc)*100).to_i %>
+    <% end %> %
 </div>
 
 <div data-abtest-atp-1231="control" class="thumbnails___b-juv thumbnails__control">
 
 <div>
-    <div class="gl-vspacing-l thumbnails_container___3SJWq thumbnails_container__control" style="left:35px;width: 80px; max-height: 400px;overflow-y: scroll;">
+    <div class="gl-vspacing-l thumbnails_container___3SJWq thumbnails_container__control" style="">
                 
 
         
@@ -195,7 +198,9 @@ imageZoom("expandedImg", "myresult");
 <div></div>
 </div>
 
-<div class="order_information___z33d1 col-s-12 col-l-8 col-hg-7" >
+
+
+<div class="order_information___z33d1 col-s-12 col-l-8 col-hg-7" style="background: #FFFF; height: 100vh; padding-left: 10px; ">
 <div class="zoom_container___3OlJd "></div>
 <div data-auto-id="product-information" class="row" itemscope="" itemtype="http://schema.org/Product">
 <meta itemprop="name" content="<%= @product.TENSP %>">
@@ -315,7 +320,7 @@ function scrollWin() {
 
         <button type="submit" onclick="" aria-label="Add To Bag" class="gl-cta btn-bag gl-cta--primary gl-cta--full-width">
                 Thêm vào túi
-            <span class="gl-icon icon icon-arrow-right-long gl-cta__icon icon--size-l"></span>
+            
         </button>
 
 
