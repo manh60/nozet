@@ -90,7 +90,7 @@
         
               <li class="back">
             <a id="product-back" class="icon-arrow-left-circle" title="Trở lại"  onclick="goBack()">
-      &#10096;Trở lại
+      Trở lại
       </a>
         </li>
 
@@ -110,26 +110,9 @@ function goBack() {
                 <span class="divider">|</span>
                 <a href="/" itemprop="url" title="Trang chủ">Trang chủ</a>
             </li>
-            
-        
-        
-
-        
-            
-            
-            
-                
-                    
-            
-
 
 <!--GENDER AGE FRANCHISE BRAND SPORTS PRODUCTTYPE PARNER CATEGORY MIADIDAS-->
-
-
-                    
-                
             
-        
     </ul>
 
 
@@ -144,7 +127,7 @@ function goBack() {
         thuộc tính sản phẩm
         </h1>        
                     <p class="count">           
-                            (# Sản Phẩm)      
+                            (<%= Product.count(:id) %> Sản Phẩm)      
                     </p>
                 </div>
             </div>
@@ -174,14 +157,18 @@ function goBack() {
 
         <!-- lặp lấy sản phẩm -->
 <% @products.each do |product| %>
+<% giaban = product.GIABAN %>
+<% giagoc = product.GIAGOC %>
 
 <div style="">
 <a href="/products/<%= product.id %>">   
 <div class="product">
 
   <div class="gl-product-card">
-    <div class="gl-badge gl-badge--small gl-badge--urgent" style="">
-<%= product.NGAYPHATHANH %>
+    <div class="gl-badge gl-badge--small gl-badge--urgent" style="<%=  product.GIAGOC ? '' : 'display: none' %> "> -
+    <% if product.GIAGOC %> 
+        <%= (100-giaban.fdiv(giagoc)*100).to_i %>
+    <% end %> %
 </div>
   </div>
 
@@ -191,10 +178,16 @@ function goBack() {
     <%= product.GENDER %>
     <br>
     <h3>
-    <span id="red"
-        <?php if(!empty($giagoc)) echo "style=\"color: red\""?>>  
-        <%= product.GIABAN %> 
-        </span><strike><%= product.GIAGOC %></strike>
+    <span id="red" style=" <%=  product.GIAGOC ? 'color:red' : '' %>">
+        
+        <%= "#{giaban*23000} ₫" %> 
+        </span></span><strike>
+            <% if product.GIAGOC %> 
+            <%= giagoc =(giagoc*23000).to_i 
+            "#{giagoc} ₫"
+            %>
+            <% end %> 
+        </strike>
     </span></h3>
 </div>      
 </a>    

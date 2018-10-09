@@ -1,7 +1,9 @@
 
 <% provide(:title, "adidas "+@product.TENSP+" - "+@product.COLOR+"") %>
+<% idsp = @product.IDSP %>
 <% giaban = @product.GIABAN %>
 <% giagoc = @product.GIAGOC %>
+
 
 <%= render 'layouts/uspbar' %>
 
@@ -123,8 +125,8 @@ imageZoom("expandedImg", "myresult");
 -->
 </div>
 
-<div class="gl-badge gl-badge--large gl-badge--urgent" style="top: 140px;left: 40px; "> -
-    <% if giaban < giagoc %> 
+<div class="gl-badge gl-badge--large gl-badge--urgent" style="top: 140px;left: 40px; <%=  @product.GIAGOC ? '' : 'display: none' %> "> -
+    <% if @product.GIAGOC %> 
         <%= (100-giaban.fdiv(giagoc)*100).to_i %>
     <% end %> %
 </div>
@@ -227,25 +229,30 @@ imageZoom("expandedImg", "myresult");
         <a class="gl-hidden-s-m gl-link gl-body--small gl-no-margin-bottom" onclick="scrollWin()"> 
 <script>
 function scrollWin() {
-    window.scrollTo(0,1250);
+    window.scrollTo(0,1400);
 }
 </script>
-
-Đọc tất cả # đánh giá-Viết Đánh Giá
+Đọc tất cả <%= Comment.where(comments: { product_id: @product.id }).count(:product_id) %> đánh giá 
 </a></span></div></div><div data-auto-id="product-category">
 <!-------------------------------------------------------------------------------------------------->
         <div class="subtitle___2z5HL gl-label gl-label--large">
-        <%= @product.GENDER %>
+        <%= @product.GENDER %>'S <%= @product.BRAND %>
         </div></div>
         
         <h1 data-auto-id="product-title" class="product_information_title___2rG9M product_title gl-heading gl-heading--m gl-heading--black"><%= @product.TENSP %></h1>
         
-        <div class="gl-price-container"><span class="gl-price"
-        <?php if(!empty($giagoc)) echo "style=\"color: red\""?>
+        <div class="gl-price-container"><span class="gl-price" style="
+        <%=  @product.GIAGOC ? 'color:red' : '' %>">
         
-        <%= @product.GIABAN %>
+        <%= "#{giaban*23000} ₫" %>
         
-        </span><strike><%= @product.GIAGOC %></strike></div></div>
+        </span><strike>
+            <% if @product.GIAGOC %> 
+            <%= giagoc =(giagoc*23000).to_i 
+            "#{giagoc} ₫"
+            %>
+            <% end %> 
+        </strike></div></div>
         
         
     
@@ -398,7 +405,7 @@ function scrollWin() {
 
 <!------------------------------------------------------------------------------------------ -->
 
-<div class="col-s-12 offset-l-1 col-l-22 col-xl-20 offset-xl-2 offset-hg-3 col-hg-18" style=" margin-left: 10%;margin-top:-220px;margin-bottom:120px;">
+<div class="col-s-12 offset-l-1 col-l-22 col-xl-20 offset-xl-2 offset-hg-3 col-hg-18" style=" margin-left: 10%;margin-top:-520px;margin-bottom:120px;">
     <h3 class="gl-vspacing-l">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;thông tin chi tiết sản phẩm</h3>
     <div class="row">
         <ul id="myDIV">
@@ -527,7 +534,6 @@ for (var i = 0; i < btns.length; i++) {
 
 <h2>Thêm một bình luận:</h2>
 <%= render 'comments/form' %>
+<br><br><br>
 
-<%= link_to 'Sửa', edit_product_path(@product) %> |
-<%= link_to 'Trở lại', products_path %>
 </div>

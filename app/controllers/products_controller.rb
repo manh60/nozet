@@ -45,6 +45,6 @@ class ProductsController < ApplicationController
 	
 	private
 	def product_params
-		params.require(:product).permit(:title, :text)
+		params.require(:product).permit(:IDSP, :TENSP, :NGAYPHATHANH, :ANH, :ANHHOVER, :ANHCHITIET, :GENDER, :AGE, :GIABAN, :GIAGOC, :SALE, :COLOR, :COLORDT, :FRANCHISE, :PRODUCTTYPE, :BRAND, :CATEGORY, :SPORTS, :MIADIDAS, :TEAMNAME, :PARNER, :DESCRIPTION_H5, :DESCRIPTION_P, :SPECIFICATIONS, :CARE)
 	end
 end
