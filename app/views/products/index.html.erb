@@ -1,139 +1,33 @@
 <% provide(:title, "adidas All") %>
-
-
-<!--
-<h1>Liệt kê tất cả sản phẩm</h1>
-
-<%= link_to 'Bài viết mới', new_product_path %>
-<table>
-  <tr>
-    <th>IDSP</th>
-    <th>TENSP</th>
-    <th>NGAYPHATHANH</th>
-    <th>ANH</th>
-    <th>ANHHOVER</th>
-    <th>ANHCHITIET</th>
-    <th>GENDER</th>
-    <th>AGE</th>
-    <th>GIABAN</th>
-    <th>GIAGOC</th>
-    <th>SALE</th>
-    <th>COLOR</th>
-    <th>COLORDT</th>
-    <th>FRANCHISE</th>
-    <th>PRODUCTTYPE</th>
-    <th>BRAND</th>
-    <th>CATEGORY</th>
-    <th>SPORTS</th>
-    <th>MIADIDAS</th>
-    <th>TEAMNAME</th>
-    <th>PARNER</th>
-    <th>DESCRIPTION_H5</th>
-    <th>DESCRIPTION_P</th>
-    <th>SPECIFICATIONS</th>
-    <th>CARE</th>
-    <th></th>
-  </tr>
-
-  <% @products.each do |product| %>
-  <tr>
-    <td><%= product.IDSP %></td>
-    <td><%= product.TENSP %></td>
-    <td><%= product.NGAYPHATHANH %></td>
-    <td><%= product.ANH %></td>
-    <td><%= product.ANHHOVER %></td>
-    <td><%= product.ANHCHITIET %></td>
-    <td><%= product.GENDER %></td>
-    <td><%= product.AGE %></td>
-    <td><%= product.GIABAN %></td>
-    <td><%= product.GIAGOC %></td>
-    <td><%= product.SALE %></td>
-    <td><%= product.COLOR %></td>
-    <td><%= product.COLORDT %></td>
-    <td><%= product.FRANCHISE %></td>
-    <td><%= product.PRODUCTTYPE %></td>
-    <td><%= product.BRAND %></td>
-    <td><%= product.CATEGORY %></td>
-    <td><%= product.SPORTS %></td>
-    <td><%= product.MIADIDAS %></td>
-    <td><%= product.TEAMNAME %></td>
-    <td><%= product.PARNER %></td>
-    <td><%= product.DESCRIPTION_H5 %></td>
-    <td><%= product.DESCRIPTION_P %></td>
-    <td><%= product.SPECIFICATIONS %></td>
-    <td><%= product.CARE %></td>
-    <td><%= link_to 'Xem', product_path(product) %></td>
-    <td><%= link_to 'Sửa', edit_product_path(product) %></td>
-    <td><%= link_to 'Xóa', product_path(product),
-              method: :delete,
-              data: { confirm: 'Bạn có chắc không?' } %></td>
-  </tr>
-  <% end %>
-</table>
-<br>
-<%= link_to 'Trở lại', root_path %>
-
--->
-
-
-
-         
-
-
-
-
-
-  <div class="rbk-page-info-top-holder">
-      <div class="pageinfotop-wrapper ">
-            <div id="breadcrumbs">
-          <ul id="product-breadcrumb" class="breadcrumbs clearfix " data-component="product/ProductBreadCrumb" data-scope="breadcrumbs">
-        
-              <li class="back">
-            <a id="product-back" class="icon-arrow-left-circle" title="Trở lại"  onclick="goBack()">
-      Trở lại
-      </a>
+<div class="rbk-page-info-top-holder">
+  <div class="pageinfotop-wrapper ">
+    <div id="breadcrumbs">
+      <ul id="product-breadcrumb" class="breadcrumbs clearfix " data-component="product/ProductBreadCrumb" data-scope="breadcrumbs">
+        <li class="back"><%= link_to 'Trở lại', :back, id: "product-back", class: "icon-arrow-left-circle" %></li>   
+        <li class="home" data-context="home">
+            <span class="divider">|</span>
+            <%= link_to 'Trang chủ', root_path %>
         </li>
-
-<script>
-function goBack() {
-    window.history.back();
-}
-</script>
-    <script>
-function goBack() {
-    window.history.back();
-}
-</script>
-        
-        
-            <li class="home" data-context="home">
-                <span class="divider">|</span>
-                <a href="/" itemprop="url" title="Trang chủ">Trang chủ</a>
-            </li>
-
-<!--GENDER AGE FRANCHISE BRAND SPORTS PRODUCTTYPE PARNER CATEGORY MIADIDAS-->
-            
+        <!--GENDER AGE FRANCHISE BRAND SPORTS PRODUCTTYPE PARNER CATEGORY MIADIDAS-->
     </ul>
+</div>
 
-
-            </div>
-        
 <br>
-        <div class="page-heading clearfix">
-            <div class="rbk-page-heading">
-                <div class="rbk-heading-wrapper">
-                    
-        <h1>
-        thuộc tính sản phẩm
-        </h1>        
-                    <p class="count">           
-                            (<%= Product.count(:id) %> Sản Phẩm)      
-                    </p>
-                </div>
-            </div>
+<div class="page-heading clearfix">
+    <div class="rbk-page-heading">
+        <div class="rbk-heading-wrapper">
+
+            <h1>
+                thuộc tính sản phẩm
+            </h1>        
+            <p class="count">           
+                (<%= Product.count(:id) %> Sản Phẩm)      
+            </p>
         </div>
-        
     </div>
+</div>
+
+</div>
 </div>
 
 
@@ -141,65 +35,65 @@ function goBack() {
 
 
 <div style="width: 218px;float:left; padding:10px; margin:50px 10px 10px 80px;position: absolute;background:#eceef0;">
-<h3 style="border-bottom: 1px solid #c8cbcc;height: 3em;line-height: 1em;font-weight: bold;font-size: 16px;">LỰA CHỌN CỦA BẠN</h3>
-<br>
-<br>
+    <h3 style="border-bottom: 1px solid #c8cbcc;height: 3em;line-height: 1em;font-weight: bold;font-size: 16px;">LỰA CHỌN CỦA BẠN</h3>
+    <br>
+    <br>
 </div>
 
 <main>
 
-<div class="pagination">
-<div style="float:left; margin-left:0px">Sắp xếp theo: Tên sản phẩm [A-Z]</div>
-<div style="float:left; margin-left:140px">Xem: 48</div>
-  Trang: 
+    <div class="pagination">
+        <div style="float:left; margin-left:0px">Sắp xếp theo: Tên sản phẩm [A-Z]</div>
+        <div style="float:left; margin-left:140px">Xem: 48</div>
+        Trang: 
         
-</div>
+    </div>
 
-        <!-- lặp lấy sản phẩm -->
-<% @products.each do |product| %>
-<% giaban = product.GIABAN %>
-<% giagoc = product.GIAGOC %>
+    <!-- lặp lấy sản phẩm -->
+    <% @products.each do |product| %>
+    <% giaban = product.GIABAN %>
+    <% giagoc = product.GIAGOC %>
 
-<div style="">
-<a href="/products/<%= product.id %>">   
-<div class="product">
+    <div style="">
+        <a href="/products/<%= product.id %>">   
+            <div class="product">
 
-  <div class="gl-product-card">
-    <div class="gl-badge gl-badge--small gl-badge--urgent" style="<%=  product.GIAGOC ? '' : 'display: none' %> "> -
-    <% if product.GIAGOC %> 
-        <%= (100-giaban.fdiv(giagoc)*100).to_i %>
-    <% end %> %
-</div>
-  </div>
+              <div class="gl-product-card">
+                <div class="gl-badge gl-badge--small gl-badge--urgent" style="<%=  product.GIAGOC ? '' : 'display: none' %> "> -
+                    <% if product.GIAGOC %> 
+                    <%= (100-giaban.fdiv(giagoc)*100).to_i %>
+                    <% end %> %
+                </div>
+            </div>
 
-  <img src="/assets/images/<%= product.IDSP %>/<%= product.ANH %>" alt="memphis" onmouseover="this.src='/assets/images/<%= product.IDSP %>/<%= product.ANHHOVER %>'" onmouseout="this.src='/assets/images/<%= product.IDSP %>/<%= product.ANH %>'" title="adidas - <%= product.TENSP %>" >
-    <h3 style="border-bottom: 1px solid #c8cbcc;height: 3em;line-height: 1em;"><%= product.TENSP %></h3>
+            <img src="/assets/images/<%= product.IDSP %>/<%= product.ANH %>" alt="memphis" onmouseover="this.src='/assets/images/<%= product.IDSP %>/<%= product.ANHHOVER %>'" onmouseout="this.src='/assets/images/<%= product.IDSP %>/<%= product.ANH %>'" title="adidas - <%= product.TENSP %>" >
+            <h3 style="border-bottom: 1px solid #c8cbcc;height: 3em;line-height: 1em;"><%= product.TENSP %></h3>
 
-    <%= product.GENDER %>
-    <br>
-    <h3>
-    <span id="red" style=" <%=  product.GIAGOC ? 'color:red' : '' %>">
-        
-        <%= "#{giaban*23000} ₫" %> 
-        </span></span><strike>
-            <% if product.GIAGOC %> 
-            <%= giagoc =(giagoc*23000).to_i 
-            "#{giagoc} ₫"
-            %>
-            <% end %> 
-        </strike>
-    </span></h3>
-</div>      
-</a>    
+            <%= product.GENDER %>
+            <br>
+            <h3>
+                <span id="red" style=" <%=  product.GIAGOC ? 'color:red' : '' %>">
+
+                    <%= "#{giaban*23000} ₫" %> 
+                </span></span><strike>
+                    <% if product.GIAGOC %> 
+                    <%= giagoc =(giagoc*23000).to_i 
+                    "#{giagoc} ₫"
+                    %>
+                    <% end %> 
+                </strike>
+            </span></h3>
+        </div>      
+    </a>    
 </div> 
 
 <% end %>
 
 <div class="pagination">
-<div style="float:left; margin-left:0px">Sắp xếp theo: Tên sản phẩm [A-Z]</div>
-<div style="float:left; margin-left:140px">Xem: 48</div>
-  Trang: 
-        
+    <div style="float:left; margin-left:0px">Sắp xếp theo: Tên sản phẩm [A-Z]</div>
+    <div style="float:left; margin-left:140px">Xem: 48</div>
+    Trang: 
+
 </div>
 
 </main>

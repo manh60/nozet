@@ -1,7 +1,22 @@
 class ProductsController < ApplicationController
 	http_basic_authenticate_with name: "dhh", password: "secret", except: [:index, :show]
 	def index
-		@products = Product.all
+		if params[:gender] == "all"
+			@products = Product.all
+		else
+			@products = Product.where(
+				GENDER: params[:gender],
+				BRAND: params[:brand],
+				CATEGORY: params[:category])
+		end
+		#@products = Product.where(AGE: params[:age])
+		#@products = Product.where(FRANCHISE: params[:franchise])
+		#@products = Product.where(BRAND: params[:brand])
+		#@products = Product.where(SPORTS: params[:sports])
+		#@products = Product.where(PRODUCTTYPE: params[:producttype])
+		#@products = Product.where(PARNER: params[:parner])
+		#@products = Product.where(CATEGORY: params[:category])
+		#@products = Product.where(MIADIDAS: params[:miadidas])
 	end
 	
 	def show
